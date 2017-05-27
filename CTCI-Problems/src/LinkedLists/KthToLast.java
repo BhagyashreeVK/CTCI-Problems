@@ -25,6 +25,7 @@ public class KthToLast {
 		
 		return p1;
 	}
+	
 	public static void main(String[] args) {
 		
 		KthToLast ktl = new KthToLast();
@@ -41,7 +42,7 @@ public class KthToLast {
 			p = p.next;
 		}
 		
-		p = ktl.kthToLast(node6, 8);
+		p = ktl.kthToLast(node6, 2);
 		
 		int data = p == null ? -1 : p.data;
 		

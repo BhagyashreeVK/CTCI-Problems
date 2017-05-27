@@ -1,6 +1,8 @@
 package ArraysandStrings;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class IsUnique {
 
@@ -22,6 +24,23 @@ public class IsUnique {
 		return true;
 	}
 	
+  public boolean isUniqueHashSet(String s){
+		
+		if(s.length() > 256){
+			return false;
+		}
+		
+		Set<Character> hm  = new HashSet<Character>();
+		for(int i=0; i < s.length(); i++){
+			if(hm.contains(s.charAt(i))){
+				return false;
+			}
+			hm.add(s.charAt(i));
+		}
+		return true;
+	}
+	
+	
 	//Time O(n) , Space O(1);
 	public boolean isUniqueWithoutExtraSpace(String s){
 		
@@ -40,7 +59,6 @@ public class IsUnique {
 		return true;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

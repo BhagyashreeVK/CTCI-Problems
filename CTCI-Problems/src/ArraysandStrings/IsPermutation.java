@@ -44,10 +44,17 @@ public class IsPermutation {
 		 return false;
 		int[] charMap = new int[256];
 		for(int i=0 ; i < s.length(); i ++){
+			if(Character.isWhitespace(s.charAt(i))){
+				continue;
+			}
 			charMap[s.charAt(i)]++;
 		}
 		for(int i=0; i < t.length(); i ++){
-			if (--charMap[s.charAt(i)] < 0)
+			if(Character.isWhitespace(t.charAt(i))){
+				continue;
+			}
+			
+			if (--charMap[t.charAt(i)] < 0)
 				return false;
 		}
 		return true;
@@ -55,7 +62,7 @@ public class IsPermutation {
 	
 	public static void main(String[] args) {
 		IsPermutation isp = new IsPermutation();
-		System.out.println(isp.isPermutation("do g", "god"));
+		System.out.println(isp.isPermutationWithoutHashMap("dog is a", "god asi"));
 	}
 
 }

@@ -31,7 +31,7 @@ public class ZeroMatrix {
 	public static void main(String[] args) {
 	
 		ZeroMatrix zm = new ZeroMatrix();
-		int[][] matrix = new int[][]{{1,2,0}, {1,2,3}, {0,3,4}};
+		int[][] matrix = new int[][]{{1,2,0}, {1,2,3}};
 
 		for(int i =0; i <matrix.length; i++){
 			 System.out.println(" ");

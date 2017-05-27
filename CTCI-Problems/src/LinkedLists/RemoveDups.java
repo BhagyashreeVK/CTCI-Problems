@@ -1,6 +1,5 @@
 package LinkedLists;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 public class RemoveDups {
@@ -10,6 +9,23 @@ public class RemoveDups {
 		
 		ListNode<Integer> p = head;
 		ListNode<Integer> previous = null;
+		HashSet<Integer> hs = new HashSet<Integer>();
+
+		while(p != null){
+			if(hs.contains(p.data)){
+				previous.next = p.next;
+			} else {
+				hs.add(p.data);
+				previous = p;
+			}
+			p = p.next;
+		}
+	}
+	
+public void myRemoveDups(ListNode<Integer> head){
+		
+		ListNode<Integer> p = head;
+		ListNode<Integer> previous = head;
 		HashSet<Integer> hs = new HashSet<Integer>();
 
 		while(p != null){
@@ -52,7 +68,7 @@ public class RemoveDups {
 		ListNode<Integer> node6 = new ListNode<Integer>(2,node5);
 		
 		RemoveDups rd = new RemoveDups();
-		rd.removeDupsWithoutDS(node6);
+		rd.myRemoveDups(node6);
 		
 		ListNode<Integer> p = node6;
 		while (p != null) {
